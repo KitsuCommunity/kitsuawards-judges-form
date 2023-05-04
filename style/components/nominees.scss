@@ -1,0 +1,87 @@
+.nominees-list {
+    display: grid;
+    gap: 5px;
+    counter-reset: nominees;
+    list-style: none;
+    padding: 0;
+}
+
+.nominee {
+    display: grid;
+    grid-template-areas:
+        "marker up title remove"
+        "marker down title remove";
+    gap: 1px;
+    column-gap: 10px;
+    grid-template-columns: min-content min-content auto min-content;
+    align-items: center;
+    padding: 5px;
+    padding-inline: 10px;
+    background-color: var(--clr-nominee-bkg);
+    border-radius: var(--radius-default);
+
+    // FIXME: Set default height and make title 
+    //        overflow with ... when too long
+
+    // grid areas
+    &::before {
+        grid-area: marker;
+    }
+    & > button.nominee-up {
+        grid-area: up;
+    }
+    & > button.nominee-down {
+        grid-area: down;
+    }
+    & > button.nominee-remove {
+        grid-area: remove;
+    }
+
+    // positions
+    &:nth-of-type(1) {
+        background-color: var(--clr-nominee-first);
+    }
+    &:nth-of-type(2) {
+        background-color: var(--clr-nominee-second);
+    }
+    &:nth-of-type(3) {
+        background-color: var(--clr-nominee-third);
+    }
+    &:nth-of-type(n + 4) {
+        background-color: var(--clr-nominee-bkg);
+    }
+    &:nth-of-type(n + 7) {
+        background-color: var(--clr-nominee-error);
+        border: var(--clr-nominee-error-border)
+    }
+    
+
+    // internal styling
+    &::before {
+        counter-increment: nominees;
+        content: counter(nominees);
+        margin: 0;
+    }
+    & > h2 {
+        grid-area: title;
+        margin: 0;
+        font-size: 1rem;
+    }
+    & > button {
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        margin: 0;
+        border: none;
+        background-color: transparent;
+        border-radius: 8px;
+
+        &:hover {
+            background-color: var(--clr-nominee-button-hover);
+        }
+
+        &.nominee-remove {
+            color: var(--clr-nominee-remove);
+        }
+    }
+}

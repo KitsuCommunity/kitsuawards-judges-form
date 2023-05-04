@@ -1,0 +1,29 @@
+.search-results-list {
+    display: grid;
+    gap: 5px;
+    padding: 0;
+}
+
+.search-result > button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    
+    width: 100%;
+    height: 100%;
+    
+    background-color: var(--clr-search-result-bkg);
+    color: var(--clr-search-results-text);
+    border: none;
+    padding: 0;
+    
+    & > h2 {
+        font-size: 1rem;
+    }
+
+    &, & > img {
+        border-radius: var(--radius-default);
+        aspect-ratio: 110 / 156;
+        height: 90px;
+    }
+}

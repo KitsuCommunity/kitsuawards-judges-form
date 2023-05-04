@@ -1,0 +1,36 @@
+:root {
+    /* ---- LOGICAL PALETTE ---- */
+
+    // Generic
+    --page-background: var(--kitsu-purple-4);
+    --font-primary: var(--white);
+
+    /* ---- COMPONENTS ---- */
+
+    // SearchResult
+    --clr-search-result-bkg: var(--kitsu-purple-2);
+    --clr-search-results-text: var(--white);
+
+    // SearchInput
+    --clr-search-input: var(--kitsu-purple-2);
+    --clr-search-input-text: var(--white);
+    --clr-search-input-border: 2px solid var(--kitsu-purple-1);
+
+    // Nominee
+    --clr-nominee-bkg: var(--kitsu-purple-3);
+    --clr-nominee-first: var(--green-5);
+    --clr-nominee-second: var(--blue-6);
+    --clr-nominee-third: var(--purple-6);
+
+    --clr-nominee-remove: var(--white);
+    
+    --clr-nominee-error: var(--red-5);
+    --clr-nominee-error-border: 2px dashed var(--red-7);
+
+    --clr-nominee-button-hover: var(--page-background);
+
+    /* ---- ICONS ---- */
+
+    // Chevron
+    --clr-chevron: var(--grey-1);
+}

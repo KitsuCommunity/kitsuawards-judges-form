@@ -1,0 +1,33 @@
+// util
+@import './palette.scss';
+@import './colours.scss';
+@import './common.scss';
+
+// components
+@import './components/components';
+
+// icons
+@import './icons/chevron.scss';
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+	background-color: var(--page-background);
+	color: var(--font-primary);
+}
+
+ul {
+    list-style: none;
+}
+
+output {
+	display: block;
+}
+
+#content {
+	max-width: 550px;
+	margin-inline: auto;
+}
