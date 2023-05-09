@@ -1,9 +1,9 @@
 use leptos::{ev::MouseEvent, *};
 
-use crate::icons::Chevron::*;
+use crate::icons::chevron::*;
 
 #[component]
-pub fn Nominee<F, F2, F3>(
+pub fn nominee<F, F2, F3>(
     cx: Scope,
     name: String,
     move_up: F,

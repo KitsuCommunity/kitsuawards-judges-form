@@ -1,5 +1,4 @@
 #![feature(async_closure)]
-#[allow(non_snake_case)]
 pub mod api;
 pub mod app;
 pub mod components;

@@ -1,9 +1,4 @@
 #![feature(async_closure)]
-#[allow(non_snake_case)]
-mod api;
-mod components;
-mod icons;
-mod pages;
 
 #[cfg(feature = "ssr")]
 #[actix_web::main]

@@ -1,3 +1,3 @@
-pub mod Home;
-pub mod NominationList;
-pub mod Search;
+pub mod home;
+pub mod nomination_list;
+pub mod search;

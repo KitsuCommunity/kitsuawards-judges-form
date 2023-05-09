@@ -1,5 +1,5 @@
-use crate::pages::Home::*;
-use crate::pages::NominationList::*;
+use crate::pages::home::*;
+use crate::pages::nomination_list::*;
 
 use leptos::*;
 use leptos_meta::*;

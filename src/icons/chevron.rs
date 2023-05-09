@@ -8,7 +8,7 @@ pub enum Direction {
 }
 
 #[component]
-pub fn Chevron<'a>(cx: Scope, direction: Direction, container_class: &'a str) -> impl IntoView {
+pub fn chevron<'a>(cx: Scope, direction: Direction, container_class: &'a str) -> impl IntoView {
     let class = match direction {
         Direction::Up => "chevron up",
         Direction::Down => "chevron down",

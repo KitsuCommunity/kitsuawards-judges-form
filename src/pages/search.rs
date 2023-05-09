@@ -1,13 +1,13 @@
 use crate::api::{get_anime, Anime};
-use crate::components::SearchResult::*;
-use crate::pages::NominationList::Nominee;
+use crate::components::search_result::*;
+use crate::pages::nomination_list::Nominee;
 
 use leptos::{leptos_dom::helpers::debounce, leptos_dom::helpers::*, *};
 use log::info;
 use std::time::Duration;
 
 #[component]
-pub fn Search(cx: Scope, insert_nominee: WriteSignal<Option<Nominee>>) -> impl IntoView {
+pub fn search(cx: Scope, insert_nominee: WriteSignal<Option<Nominee>>) -> impl IntoView {
     // Creates a reactive value to update the button
     let (text, set_text) = create_signal(cx, String::new());
     let (data, set_data) = create_signal::<Vec<Anime>>(cx, vec![]);

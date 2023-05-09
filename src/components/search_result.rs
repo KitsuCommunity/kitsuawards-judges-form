@@ -1,9 +1,9 @@
 use leptos::{ev::MouseEvent, *};
 
-use crate::{api::Anime, pages::NominationList::Nominee};
+use crate::{api::Anime, pages::nomination_list::Nominee};
 
 #[component]
-pub fn SearchResult<F>(
+pub fn search_result<F>(
     cx: Scope,
     anime: Anime,
     insert_nominee: WriteSignal<Option<Nominee>>,
@@ -15,7 +15,7 @@ where
     let (title, _) = create_signal(cx, anime.titles.canonical);
     let (id, _) = create_signal(cx, anime.id);
 
-    let image = anime.posterImage.views[0].url.clone();
+    let image = anime.poster_image.views[0].url.clone();
 
     let on_click = move |ev: MouseEvent| {
         ev.prevent_default();

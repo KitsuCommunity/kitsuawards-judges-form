@@ -1,4 +1,4 @@
-use crate::{components::Nominee::*, pages::Search::*};
+use crate::{components::nominee::*, pages::search::*};
 
 use leptos::*;
 use log::info;
@@ -28,7 +28,7 @@ fn test_data() -> Vec<Nominee> {
 const MAX_ENTRIES: usize = 6;
 
 #[component]
-pub fn NominationList(cx: Scope, category: String) -> impl IntoView {
+pub fn nomination_list(cx: Scope, category: String) -> impl IntoView {
     let (nominees, set_nominees) = create_signal::<Vec<Nominee>>(cx, test_data());
     let (selected_nominee, set_selected_nominee) = create_signal::<Option<Nominee>>(cx, None);
 

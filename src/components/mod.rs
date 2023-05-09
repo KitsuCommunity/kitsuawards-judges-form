@@ -1,2 +1,2 @@
-pub mod Nominee;
-pub mod SearchResult;
+pub mod nominee;
+pub mod search_result;

@@ -1,7 +1,4 @@
-use anyhow::Error;
-use leptos::{ev::Event, html::Math, leptos_dom::helpers::debounce, *};
-use leptos_meta::*;
-use leptos_router::*;
+use leptos::log;
 use reqwasm::http::Request;
 use serde::{Deserialize, Serialize};
 
@@ -20,8 +17,9 @@ pub struct AnimeTitleSearchRes {
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Clone, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct SearchAnimeByTitle {
-    pub searchAnimeByTitle: Nodes,
+    pub search_anime_by_title: Nodes,
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Clone, Debug)]
@@ -30,10 +28,11 @@ pub struct Nodes {
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Clone, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct Anime {
     pub id: String,
     pub slug: String,
-    pub posterImage: PosterImage,
+    pub poster_image: PosterImage,
     pub titles: Titles,
 }
 
@@ -52,14 +51,14 @@ pub struct Views {
     pub url: String,
 }
 
-fn construct_default_anime(title: String) -> Vec<Anime> {
+fn _construct_default_anime(title: String) -> Vec<Anime> {
     let mut v: Vec<Anime> = vec![];
 
     for t in title.chars() {
         v.push(Anime {
             id: "1".to_string(),
             slug: "https://kitsu.io/".to_string(),
-            posterImage: PosterImage {
+            poster_image: PosterImage {
                 views: vec![Views {
                     url: "https://kitsu.io".to_string(),
                 }],
@@ -94,7 +93,7 @@ pub async fn get_anime(title: String) -> Vec<Anime> {
     // info!("{}", test);
 
     match req.json::<AnimeTitleSearchRes>().await {
-        Ok(val) => val.data.searchAnimeByTitle.nodes,
+        Ok(val) => val.data.search_anime_by_title.nodes,
         Err(_) => vec![],
     }
 }
