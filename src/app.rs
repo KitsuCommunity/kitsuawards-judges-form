@@ -15,7 +15,7 @@ pub fn App(cx: Scope) -> impl IntoView {
 
         // injects a stylesheet into the document <head>
         // id=leptos means cargo-leptos will hot-reload this stylesheet
-        <Stylesheet id="leptos" href="/pkg/leptos_start.css"/>
+        <Stylesheet id="leptos" href="/pkg/kitsuawards_judges_form.css"/>
 
         // sets the document title
         <Title text="Kitsu Anime Awards Form"/>
@@ -25,8 +25,8 @@ pub fn App(cx: Scope) -> impl IntoView {
             <main>
                 <div id="content">
                 <Routes>
-                    <Route path="" view=|cx| view! { cx, <Home />}/>
                     <Route path="/nominations" view=|cx| view! { cx, <NominationList category="Best Anime".to_string() /> }/>
+                    <Route path="" view=|cx| view! { cx, <Home />}/>
                 </Routes>
                 </div>
             </main>
